@@ -4,27 +4,29 @@ package facturacion;
  * ADVERTENCIA: Código con alta deuda técnica. No modificar la firma del método.
  */
 public class FacturacionLegacy {
-    public static final double DESCUENTO_VIP = 0.25;
-    public static final double DESCUENTO_ESTANDAR = 0.15;
-    public static final double DESCUENTO_TERCER_TIPO = 0.05;
+    public static final double DESCUENTO_VIP = 0.75;
+    public static final double DESCUENTO_ESTANDAR = 0.85;
+    public static final double DESCUENTO_TERCER_TIPO = 0.95;
     
     // Método a refactorizar
     public double calcularTotal(double importeBase, int tipoCliente, boolean esSocioVip) {
-        if (importeBase > 0) {
-            if (tipoCliente == 1) {
-                if (esSocioVip == true)
-                    return importeBase - (importeBase * DESCUENTO_VIP);
-                else
-                    return importeBase - (importeBase * DESCUENTO_ESTANDAR);
-            } else {
-                if (tipoCliente == 2) {
-                    return importeBase - (importeBase * DESCUENTO_TERCER_TIPO);
-                } else {
-                    return importeBase;
-                }
+        //Entorno:
+            double importeTotal;
+        //Algoritmo:
+            importeTotal = 0;
+            
+            switch(tipoCliente){
+                case 1:
+                    importeTotal = esSocioVip ? importeBase * DESCUENTO_VIP : importeBase * DESCUENTO_ESTANDAR;
+                    break;
+                case 2:
+                    importeTotal = importeBase * DESCUENTO_TERCER_TIPO;
+                    break;
+                default:
+                    importeTotal = importeBase;
+                    break;
             }
-        } else {
-            return 0;
-        }
+                
+            return importeTotal;
     }
 }
