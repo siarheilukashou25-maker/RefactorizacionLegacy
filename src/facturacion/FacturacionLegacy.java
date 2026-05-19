@@ -34,7 +34,7 @@ public class FacturacionLegacy {
         //Algoritmo:
             importeTotal = 0;
             
-            if(importeTotal > 0){
+            if(importeBase > 0){
                 switch(tipoCliente){
                     case 1:
                         importeTotal = esSocioVip ? importeBase * DESCUENTO_VIP : importeBase * DESCUENTO_ESTANDAR;
