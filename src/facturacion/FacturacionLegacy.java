@@ -5,14 +5,23 @@ package facturacion;
  * ADVERTENCIA: Código con alta deuda técnica. No modificar la firma del método.
  */
 public class FacturacionLegacy {
+    /**
+        * DESCUENTO_VIP es un 25% descuento para clientes del primer tipo y si son VIP 
+        */
     public static final double DESCUENTO_VIP = 0.75;
+    /**
+        * DESCUENTO_ESTANDAR es un 15% descuento para clientes del primer tipo y sin VIP 
+        */
     public static final double DESCUENTO_ESTANDAR = 0.85;
+    /**
+        * DESCUENTO_TERCER_TIPO es un 5% descuento para clientes del segundo tipo 
+        */
     public static final double DESCUENTO_TERCER_TIPO = 0.95;
     
     /**
      * Devuelve importe total según tipo de cliente.
      * @param importeBase Importe base del que calculamos.
-     * @param tipoCliente Tipo de cliente 
+     * @param tipoCliente Tipo de cliente [1,2 o cualquier sea]
      * @param esSocioVip Si es socio VIP. Si es true tendrá un descuento.
      * @return Devuelve variable con el valor de importe total de tipo double.
      * Con rango de valores [0, Double.MAX_VALUE]
