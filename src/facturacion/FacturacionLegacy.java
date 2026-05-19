@@ -25,6 +25,7 @@ public class FacturacionLegacy {
      * @param esSocioVip Si es socio VIP. Si es true tendrá un descuento.
      * @return Devuelve variable con el valor de importe total de tipo double.
      * Con rango de valores [0, Double.MAX_VALUE]
+     * Devuelve 0 si importeBase < 0
      * @see java.lang.Double
      */
     public double calcularTotal(double importeBase, int tipoCliente, boolean esSocioVip) {
