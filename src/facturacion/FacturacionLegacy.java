@@ -33,7 +33,8 @@ public class FacturacionLegacy {
             double importeTotal;
         //Algoritmo:
             importeTotal = 0;
-            
+
+        
             if(importeBase > 0){
                 switch(tipoCliente){
                     case 1:
