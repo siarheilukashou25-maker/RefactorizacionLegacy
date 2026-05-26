@@ -1,6 +1,7 @@
 package facturacion;
 /**
- * @author Carmen Alhaja García y Siarhei Lukashou
+ * @author Carmen Alhaja García
+ * @author Siarhei Lukashou
  * Clase Legacy del sistema de facturación.
  * ADVERTENCIA: Código con alta deuda técnica. No modificar la firma del método.
  */
@@ -30,15 +31,14 @@ public class FacturacionLegacy {
      */
     public double calcularTotal(double importeBase, int tipoCliente, boolean esSocioVip) {
         //Entorno:
-            double importeTotal;
+            double importeTotal;//declaracion de variable local
         //Algoritmo:
-            importeTotal = 0;
-
+            importeTotal = 0;//initializacion de variable local
         
             if(importeBase > 0){
                 switch(tipoCliente){
                     case 1:
-                        importeTotal = esSocioVip ? importeBase * DESCUENTO_VIP : importeBase * DESCUENTO_ESTANDAR;
+                        importeTotal = esSocioVip ? importeBase * DESCUENTO_VIP : importeBase * DESCUENTO_ESTANDAR; //operador ternario
                         break;
                     case 2:
                         importeTotal = importeBase * DESCUENTO_TERCER_TIPO;
